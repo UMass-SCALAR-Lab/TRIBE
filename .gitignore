@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv*/
+venv/
+*.egg
+
+# W&B run logs -- regenerable, large (multi-GB across a project's lifetime)
+wandb/
+
+# SLURM job stdout/stderr -- regenerable per-run artifacts. Launch scripts themselves
+# (*.sh, *.sbatch, *.tsv, *.txt job lists) in slurm/ ARE tracked.
+slurm/logs/
+
+# Ad-hoc debug/smoke-test run logs dumped at the repo root during development
+*.log
+smoke_test_logs/
+
+# LaTeX build byproducts
+*.aux
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.toc
+*.out
+
+# Code only -- no eval results, generated data, or paper artifacts in this repo
+*.tex
+*.pdf
+/gsm8k_eval/
+/math_eval/
+/ultrafeedback_eval/
+/alpacaeval/
+/mtbench/
+/figures/
+
+# OS cruft
+.DS_Store

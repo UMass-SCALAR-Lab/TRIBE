@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tribe"
+version = "0.0.1"
+description = "TRIBE: Trust-Region Iterative Behavior-cloning Estimator"
+requires-python = ">=3.10"
+
+[tool.setuptools]
+packages = ["tribe"]

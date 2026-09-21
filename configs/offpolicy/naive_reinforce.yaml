@@ -1,0 +1,10 @@
+model_name_or_path: meta-llama/Llama-3.2-3B-Instruct
+# group_size/per_device_train_batch_size deliberately NOT here — they depend on which dataset (GSM8K
+# group_size=16 vs MATH group_size=32) this is pointed at, so they're passed via CLI at launch time
+# alongside --dataset_path/--output_dir, not baked into the method's config.
+max_completion_length: 512
+learning_rate: 5.0e-7
+lr_scheduler_type: constant
+num_train_epochs: 1
+gradient_checkpointing: true
+bf16: true

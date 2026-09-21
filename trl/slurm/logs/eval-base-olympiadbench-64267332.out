@@ -1,0 +1,24 @@
+Loading cuda version 12.6
+Traceback (most recent call last):
+  File "<string>", line 13, in <module>
+  File "/work/pi_sniekum_umass_edu/ychittepu/miniconda3/envs/llm_gen/lib/python3.10/site-packages/datasets/load.py", line 2594, in load_dataset
+    builder_instance = load_dataset_builder(
+  File "/work/pi_sniekum_umass_edu/ychittepu/miniconda3/envs/llm_gen/lib/python3.10/site-packages/datasets/load.py", line 2266, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+  File "/work/pi_sniekum_umass_edu/ychittepu/miniconda3/envs/llm_gen/lib/python3.10/site-packages/datasets/load.py", line 1914, in dataset_module_factory
+    raise e1 from None
+  File "/work/pi_sniekum_umass_edu/ychittepu/miniconda3/envs/llm_gen/lib/python3.10/site-packages/datasets/load.py", line 1834, in dataset_module_factory
+    dataset_info = hf_api.dataset_info(
+  File "/work/pi_sniekum_umass_edu/ychittepu/miniconda3/envs/llm_gen/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/work/pi_sniekum_umass_edu/ychittepu/miniconda3/envs/llm_gen/lib/python3.10/site-packages/huggingface_hub/hf_api.py", line 2363, in dataset_info
+    r = get_session().get(path, headers=headers, timeout=timeout, params=params)
+  File "/work/pi_sniekum_umass_edu/ychittepu/miniconda3/envs/llm_gen/lib/python3.10/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "/work/pi_sniekum_umass_edu/ychittepu/miniconda3/envs/llm_gen/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/work/pi_sniekum_umass_edu/ychittepu/miniconda3/envs/llm_gen/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/work/pi_sniekum_umass_edu/ychittepu/miniconda3/envs/llm_gen/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 77, in send
+    raise OfflineModeIsEnabled(
+huggingface_hub.errors.OfflineModeIsEnabled: Cannot reach https://huggingface.co/api/datasets/Hothan/OlympiadBench: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.

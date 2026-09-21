@@ -1,0 +1,12 @@
+model_name_or_path: meta-llama/Llama-3.2-3B-Instruct
+# group_size/per_device_train_batch_size passed via CLI at launch (dataset-dependent, see naive_reinforce.yaml).
+# GSM8K-tuned winner from the eps sweep (0.05/0.5/1.0/2.0) this session — re-sweep on MATH before trusting
+# this value there, see configs/offpolicy/sweep_tribe_math/ once that sweep is written.
+max_completion_length: 512
+learning_rate: 5.0e-7
+lr_scheduler_type: constant
+trust_region_eps: 0.5
+use_unlikelihood: true
+num_train_epochs: 1
+gradient_checkpointing: true
+bf16: true

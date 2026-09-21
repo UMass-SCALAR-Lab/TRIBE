@@ -1,0 +1,20 @@
+# Safe-TRIBE, soft/dual-ascent Stage 1 (--soft_cost_constraint) — folds cost into the advantage via a
+# persistent Lagrange multiplier instead of a hard cvxpy constraint (never infeasible, unlike the hard
+# variant; see tribe/safe_tribe_config.py's docstring). Same base setup as safetribe_hard.yaml otherwise —
+# --model_name_or_path/--reward_model_name_or_path/--cost_model_name_or_path still passed via CLI.
+dataset_name: PKU-Alignment/PKU-SafeRLHF-10K
+dataset_train_split: train
+num_generations: 8
+per_device_train_batch_size: 8
+gradient_accumulation_steps: 4
+max_completion_length: 512
+num_train_epochs: 1
+gradient_checkpointing: true
+bf16: true
+deepspeed: configs/deepspeed_zero3.json
+learning_rate: 1.0e-6
+beta: 0.1
+trust_region_eps: 0.05
+divergence: kl_new_old
+cost_limit: -5
+soft_cost_constraint: true

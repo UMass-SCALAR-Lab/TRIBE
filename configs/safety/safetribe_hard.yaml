@@ -1,0 +1,20 @@
+# Safe-TRIBE, hard-constrained Stage 1 (default cvxpy solve — see tribe/stage1_safe.py). Reward/cost
+# models are Safe-RLHF AutoModelForScore checkpoints trained on the SAME SFT base (llama3.2-3b here) — see
+# scripts/train_beavertails_safetribe.py's own docstring. --model_name_or_path/--reward_model_name_or_path/
+# --cost_model_name_or_path point at local checkpoint dirs, so they're passed via CLI, not baked in here
+# (this repo doesn't ship those checkpoints).
+dataset_name: PKU-Alignment/PKU-SafeRLHF-10K
+dataset_train_split: train
+num_generations: 8
+per_device_train_batch_size: 8
+gradient_accumulation_steps: 4
+max_completion_length: 512
+num_train_epochs: 1
+gradient_checkpointing: true
+bf16: true
+deepspeed: configs/deepspeed_zero3.json
+learning_rate: 1.0e-6
+beta: 0.1
+trust_region_eps: 0.05
+divergence: kl_new_old
+cost_limit: 0.0

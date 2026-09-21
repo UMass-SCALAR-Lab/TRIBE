@@ -1,0 +1,8 @@
+model_name_or_path: meta-llama/Llama-3.2-3B-Instruct
+learning_rate: 5.0e-7
+lr_scheduler_type: constant
+beta: 2.0
+simpo_gamma: 0.5
+num_train_epochs: 1
+gradient_checkpointing: true
+bf16: true
